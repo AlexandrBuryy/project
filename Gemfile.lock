@@ -37,16 +37,16 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    bcrypt-ruby (3.1.2)
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (2.3.2.0)
       sass (~> 3.2)
     builder (3.2.2)
     byebug (8.2.2)
-    coffee-rails (4.1.1)
+    coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.1.x)
+      railties (>= 4.0.0, < 5.0)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -55,6 +55,11 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -76,7 +81,6 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    pg (0.15.1)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -99,7 +103,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails_12factor (0.0.2)
+    rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
@@ -138,6 +142,9 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (2.1.1)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -148,19 +155,21 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (= 3.1.2)
+  bcrypt (~> 3.1.7)
   bootstrap-sass (= 2.3.2.0)
   byebug
+  coffee-rails (= 4.0.1)
+  factory_girl_rails (= 4.2.1)
   jbuilder (~> 2.0)
   jquery-rails
-  pg (= 0.15.1)
   rails (= 4.2.5.1)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
   sqlite3
   turbolinks
+  uglifier (= 2.1.1)
   web-console (~> 2.0)
 
 BUNDLED WITH

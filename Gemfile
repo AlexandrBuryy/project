@@ -10,14 +10,16 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
-gem 'bcrypt-ruby', '3.1.2'
+gem 'bcrypt', '~> 3.1.7'
+
+#gem 'bcrypt-ruby', '3.1.2'
 
 #gem 'rspec-rails', '2.13.1'
  #gem 'guard-rspec', '2.5.0'
 # Use Uglifier as compressor for JavaScript assets
-#gem 'uglifier', '2.1.1'
+gem 'uglifier', '2.1.1'
 # Use CoffeeScript for .coffee assets and views
-#gem 'coffee-rails', '4.0.1'
+gem 'coffee-rails', '4.0.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -39,6 +41,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'factory_girl_rails', '4.2.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -52,7 +56,6 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
-end
+
+  #gem 'pg'
+  gem 'rails_12factor'
