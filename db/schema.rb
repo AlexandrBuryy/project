@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160214164420) do
+ActiveRecord::Schema.define(version: 20160217191422) do
 
   create_table "microposts", force: :cascade do |t|
     t.string   "content"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20160214164420) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -27,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160214164420) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
